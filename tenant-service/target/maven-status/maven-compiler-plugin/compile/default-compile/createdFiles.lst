@@ -1,0 +1,12 @@
+org\arksworld\saasPlatform\tenant\entity\Shard.class
+org\arksworld\saasPlatform\tenant\service\SchemaProvisioningService.class
+org\arksworld\saasPlatform\tenant\repository\ShardRepository.class
+org\arksworld\saasPlatform\tenant\TenantApplication.class
+org\arksworld\saasPlatform\tenant\controller\TenantController.class
+org\arksworld\saasPlatform\tenant\entity\Tenant.class
+org\arksworld\saasPlatform\tenant\repository\TenantRepository.class
+org\arksworld\saasPlatform\tenant\service\MigrationService.class
+org\arksworld\saasPlatform\tenant\service\ShardAllocator.class
+org\arksworld\saasPlatform\tenant\dto\TenantRequest.class
+org\arksworld\saasPlatform\tenant\service\TenantService.class
+org\arksworld\saasPlatform\tenant\dto\TenantResponse.class
