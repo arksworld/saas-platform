@@ -1,0 +1,3 @@
+org\arksworld\saasPlatform\gateway\filter\JwtGatewayFilter.class
+org\arksworld\saasPlatform\gateway\GatewayApplication.class
+org\arksworld\saasPlatform\gateway\config\SecurityConfig.class

@@ -1,0 +1,12 @@
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\controller\TenantController.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\dto\TenantRequest.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\dto\TenantResponse.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\entity\Shard.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\entity\Tenant.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\repository\ShardRepository.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\repository\TenantRepository.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\service\MigrationService.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\service\SchemaProvisioningService.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\service\ShardAllocator.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\service\TenantService.java
+D:\Workspace\saas-platform\tenant-service\src\main\java\org\arksworld\saasPlatform\tenant\TenantApplication.java
