@@ -1,28 +1,22 @@
-package org.arksworld.saasPlatform.auth.user.entity;
+package org.arksworld.saasPlatform.auth.kafka.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "processed_events")
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class ProcessedEvent {
 
     @Id
-    private String id;
-
-    private String username;
-
-    private String password;
-
-    private String tenantId;
-
-    private String role;
+    @Column(name="eventId")
+    private String eventId;
 }

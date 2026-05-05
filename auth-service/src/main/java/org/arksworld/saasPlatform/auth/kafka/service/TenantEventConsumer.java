@@ -1,27 +1,48 @@
 package org.arksworld.saasPlatform.auth.kafka.service;
 
-import lombok.RequiredArgsConstructor;
-import org.arksworld.saasPlatform.auth.kafka.events.TenantCreatedEvent;
-import org.arksworld.saasPlatform.auth.user.dto.UserRequest;
-import org.arksworld.saasPlatform.auth.user.service.UserService;
-import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.stereotype.Service;
 
-@Service
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
+import org.arksworld.saasPlatform.auth.kafka.entity.ProcessedEvent;
+import org.arksworld.saasPlatform.auth.kafka.handler.TenantEventHandler;
+import org.arksworld.saasPlatform.auth.kafka.repository.ProcessedEventRepository;
+import org.arksworld.saasPlatform.common.events.BaseEvent;
+import org.arksworld.saasPlatform.common.events.tenant.TenantCreatedEvent;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
+
+@Component
 @RequiredArgsConstructor
 public class TenantEventConsumer {
 
-    private final UserService userService;
+    private final ObjectMapper objectMapper;
+    private final TenantEventHandler handler;
+    private final ProcessedEventRepository processedEventRepository;
 
-    @KafkaListener(topics = "tenant-created", groupId = "saas-group")
-    public void consume(TenantCreatedEvent event) {
+    @KafkaListener(
+            topics = "tenant-events",
+            containerFactory = "kafkaListenerContainerFactory"
+    )
+    public void consume(BaseEvent event) {
 
-        System.out.println("Received event:" + event);
-        UserRequest userRequest = new UserRequest();
-        userRequest.setTenantId(event.getTenantId());
-        userRequest.setUsername(event.getAdminUsername());
-        userRequest.setPassword(event.getAdminPassword());
-        userRequest.setRole("ADMIN");
-        userService.createUser(userRequest);
+        if(processedEventRepository.existsById(event.getEventId())) {
+            return;
+        }
+
+        switch (event.getEventType()) {
+
+            case "TENANT_CREATED":
+                TenantCreatedEvent payload =
+                        objectMapper.convertValue(event.getPayload(), TenantCreatedEvent.class);
+
+                handler.handleTenantCreated(event, payload);
+                break;
+
+            default:
+                System.out.println("Unknown event: " + event.getEventType());
+        }
+        ProcessedEvent processedEvent = new ProcessedEvent(event.getEventId());
+        processedEventRepository.save(processedEvent);
     }
 }

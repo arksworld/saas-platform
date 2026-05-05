@@ -1,4 +1,4 @@
-package org.arksworld.saasPlatform.auth.kafka.events;
+package org.arksworld.saasPlatform.common.events.tenant;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

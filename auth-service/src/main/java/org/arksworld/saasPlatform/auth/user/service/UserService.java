@@ -16,14 +16,7 @@ public class UserService {
     }
 
     public User createUser(UserRequest request) {
-
-        User user = new User();
-        user.setId(UUID.randomUUID().toString());
-        user.setUsername(request.getUsername());
-        user.setPassword(request.getPassword()); // hash later
-        user.setTenantId(request.getTenantId());
-        user.setRole(request.getRole());
-
+        User user = new User(UUID.randomUUID().toString(), request.getUsername(), request.getPassword(), request.getTenantId(), request.getRole());
         return userRepository.save(user);
     }
 }
