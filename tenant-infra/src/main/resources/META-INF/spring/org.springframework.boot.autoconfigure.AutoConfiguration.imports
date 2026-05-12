@@ -1,0 +1,2 @@
+org.arksworld.saasPlatform.tenant.config.DataSourceAutoConfiguration
+org.arksworld.saasPlatform.tenant.config.HibernateMultiTenantConfig

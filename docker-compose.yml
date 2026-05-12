@@ -63,8 +63,6 @@ services:
       - shard2-data:/var/lib/postgresql/data
     networks:
       - saas-network
-
-
   # ⚡ Redis (Tenant routing cache)
   redis:
     image: redis:7

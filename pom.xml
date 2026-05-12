@@ -25,6 +25,10 @@
     <module>tenant-service</module>
     <module>product-service</module>
     <module>auth-service</module>
+    <module>order-service</module>
+    <module>tenant-infra</module>
+    <module>order-worker-service</module>
+    <module>tenant-router</module>
 </modules>
 
         <!-- Properties -->

@@ -36,7 +36,8 @@ public class TenantService {
 
         // Step 3: Run migrations
         //migrationService.migrateCore(shard, schema);
-        migrationService.migrateProduct(shard, schema);
+        migrationService.migrateTenant(shard, schema);
+
        // migrationService.migrateALl(shard, schema);
 
         // Step 4: Save metadata

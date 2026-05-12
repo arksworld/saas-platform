@@ -58,6 +58,13 @@
             <version>1.0.0</version>
         </dependency>
 
+        <!-- Tenant infra module -->
+        <dependency>
+            <groupId>org.arksworld.saasPlatform</groupId>
+            <artifactId>tenant-infra</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
         <!-- PostgreSQL -->
         <dependency>
             <groupId>org.postgresql</groupId>

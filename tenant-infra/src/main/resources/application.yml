@@ -1,0 +1,16 @@
+tenant:
+  shards:
+    shard1:
+      url: jdbc:postgresql://localhost:5433/shard1
+      username: postgres
+      password: postgres
+
+    shard2:
+      url: jdbc:postgresql://localhost:5434/shard2
+      username: postgres
+      password: postgres
+
+control-db:
+  url: jdbc:postgresql://localhost:5432/control_db
+  username: postgres
+  password: postgres

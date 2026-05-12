@@ -21,9 +21,10 @@ public class MigrationService {
         runFlyway(shard, schema, "db/migration/core");
     }
 
-    public void migrateProduct(Shard shard, String schema) {
-        runFlyway(shard, schema, "db/migration/product");
+    public void migrateTenant(Shard shard, String schema) {
+        runFlyway(shard, schema, "db/migration/tenant");
     }
+
 
     private void runFlyway(Shard shard, String schema, String location) {
 
