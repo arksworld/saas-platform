@@ -14,13 +14,13 @@
         <module name="platform-gateway" />
         <module name="platform-common" />
         <module name="product-service" />
-        <module name="order-service" />
-        <module name="order-worker-service" />
-        <module name="tenant-router" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="order-service" target="21" />
+      <module name="order-worker-service" target="21" />
       <module name="tenant-infra" target="21" />
+      <module name="tenant-router" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>
